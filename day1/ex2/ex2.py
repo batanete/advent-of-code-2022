@@ -1,9 +1,13 @@
+# read input
+
 INPUT_PATH = './day1/input.txt'
 
 with open(INPUT_PATH, 'r') as f:
     lines = f.readlines()
     # remove line endings
     lines = [line[:-1] for line in lines]
+
+# solution
 
 totals = []
 totals_curr = 0
