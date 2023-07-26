@@ -14,7 +14,7 @@ with open(INPUT_PATH, 'r') as f:
 MAX_SIZE = 100000
 
 
-valid_folders = set()
+folders = set()
 
 class TreeNode:
 
@@ -23,7 +23,7 @@ class TreeNode:
         self.subfolders = {}
         self.files = set()
         self.space_taken = 0
-        valid_folders.add(self)
+        folders.add(self)
 
     def create_subfolder_if_not_exists(self, name):
         if name not in self.subfolders:
@@ -120,5 +120,5 @@ for line in lines:
                 else:
                     current_node = current_node.create_subfolder_if_not_exists(path_part)
 
-print(sum([folder.space_taken for folder in valid_folders if folder.space_taken <= MAX_SIZE]))
+print(sum([folder.space_taken for folder in folders if folder.space_taken <= MAX_SIZE]))
 
